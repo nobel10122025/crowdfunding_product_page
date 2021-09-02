@@ -1,0 +1,521 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    font-family: 'Commissioner', sans-serif;
+}
+body,html{
+    margin:0;
+    padding: 0;
+    font-size: 16px;
+    background-color: rgba(224, 255, 255, 0.5);
+}
+
+.navbar{
+    background: url(images/image-hero-desktop.jpg);
+    width: 100%;
+    height: 25rem;
+    display: flex;
+}
+.navbar-start{
+    width:50%;
+    background: url(images/logo.svg);
+    height: 5rem;
+    background-repeat: no-repeat;
+    background-position-x: 5rem;
+    background-position-y: 2rem;
+}
+.navbar-end{
+    width: 50%;
+    display: flex;  
+    justify-content:space-evenly;
+    height: 5rem;
+    padding: 2rem;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+.navbar a:hover{
+    font-weight: 700;
+}
+.menu{
+    display: none;
+}
+.heading{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0rem 2rem;
+    padding-bottom: 2rem;
+    width: 50rem;
+}
+.heading-title{
+    font-weight: 700;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+    margin:0rem 2rem;
+}
+.heading-desc{
+    margin: 1rem;
+    color: hsl(0, 16%, 41%);
+}
+.heading  > img{
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    top:-25px;
+    left: 45%;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;                                     
+}
+.links .bookmark{
+    display: flex;
+    align-items: center;
+    background-color: hsl(0, 3%, 77%);
+    border-radius: 1.5rem;
+    padding-right:2rem;
+    text-align: center;
+    cursor: pointer;
+    height: 56px;
+
+}
+.links .bookmark.active{
+
+    background-color: lightcyan;
+    color:hsl(176, 50%, 47%);
+}
+.links .bookmark.active svg,
+.links .bookmark.active circle{
+    fill:hsl(176, 50%, 47%);
+}
+.links .bookmark.active path{
+    fill:lightcyan;
+}
+.links .bookmark .bookmark-link{
+    padding-left: 0.5rem;
+}
+.bookmark .bookmark-link::after.active{
+    content: "bookmarked";
+}
+button.project-link{
+    outline: 0;
+    margin: 0;
+    border: 0;
+    background: hsl(176, 50%, 47%);
+    color:white;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size:1rem;
+}
+button.project-link:hover{
+    background: hsl(176, 72%, 28%);
+}
+.text-container{
+    background-color: white;
+    width:50rem;
+    left: 20%;
+    position: relative;
+    top:65px;
+}
+.stats-bar{
+    position: relative;
+    display: grid;
+    width: 50rem;
+    padding:1rem 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.value-space:nth-child(2), .value-space:nth-child(1){
+    border-right: 2px solid rgb(160, 161, 160);
+}
+.value-space{
+    padding:2rem 2rem;
+}
+.stats-bar .current-value{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.stats-bar .total-value{
+    color: hsl(0, 0%, 48%);
+}
+.stats-bar .span{
+    grid-column:1/-1;
+}
+#myProgress{
+    width: 100%;
+    background-color: #ddd;
+    margin-top: 1rem;
+} 
+#myBar{
+    width: 1%;
+    height: 15px;
+    background-color: hsl(176, 50%, 47%);
+    border-radius: 0.5rem;
+}
+.main-container{
+    width: 50rem;
+    left: 20%;
+    position: relative;
+    top:65px;
+    background-color: white;
+    margin: 1rem 0rem;
+    padding: 1rem 2rem;
+    margin-bottom: 10rem;
+}
+.main-container .about-title{
+    padding: 1rem 0rem;
+    font-weight: 700;
+    font-size: x-large;
+}
+.about-section p, .sub-division p{
+    color: hsl(0, 0%, 48%);
+    line-height: 1.5rem;
+    font-size: large;   
+}
+.sub-division{
+    padding: 1rem 2.3rem;
+    border: 1px solid hsl(0, 0%, 48%);
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+.sub-division .heading-div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+    align-items: center;
+    font-weight: 700;
+}
+.sub-division .title{
+    padding: 1rem 0rem;
+    
+    font-size: large;
+}
+.sub-division .heading-div p{
+    color: hsl(176, 50%, 47%);
+}
+.subdiv-end{
+    display: flex;
+    justify-content: space-between;
+}
+.amount-left{
+    display: flex;
+    justify-content: left;
+}
+.amount-left .value{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.amount-left .left{
+    padding: 1rem;
+    color: hsl(0, 0%, 48%);
+}
+.sub-division.special,.modal-sub-container.special{
+    opacity: 0.5;
+    pointer-events: none;
+}
+.sub-division.special button{
+    background-color:hsl(0, 0%, 48%);
+}
+.overlay{
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  } 
+
+
+.modal-area{
+    background-color: white;
+    width: 50rem;
+    border-radius: 1.5rem;
+    position: absolute;
+    left: 20%;
+    right: 15%;
+    top:30%;
+    padding: 1rem 2rem;
+    /*display: none;*/
+}
+.modal-heading-sec{
+    display: flex;
+    justify-content: space-between;
+}
+.modal-heading{
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 0rem;
+}
+.modal-heading-sec img{
+    height: 0.7rem;
+    cursor: pointer;
+}
+.modal-desc{
+    color:hsl(0, 0%, 48%);
+    padding-bottom: 1rem;
+}
+.modal-sub-container{
+    padding: 1.5rem 2rem;
+    border: 1px solid hsl(0, 0%, 48%);
+    margin: 1.5rem 0rem;
+    border-radius: 1rem;
+}
+.modal-sub-container input[type = radio]{
+    height: 1rem;
+    width:6%;
+    background-color: hsl(176, 50%, 47%);;
+}
+.modal-sub-container .modal-sub-heading{
+   font-weight: 700;
+}
+.modal-sub-container .modal-sub-desc{
+    padding: 1rem 0rem;
+    color:hsl(0, 0%, 48%);
+    margin-left: 2.6rem;
+    margin-bottom: 2rem;
+}
+.modal-sub-heading ~ p{
+    color: hsl(176, 50%, 47%);
+    display: inline;
+    margin-left: 1.0rem;
+    font-weight:500 ;
+}
+.modal-sub-head-area{
+    display: inline;
+}
+.amount-left.small{
+    display: inline-flex;
+    position: absolute;
+    right: 10%;
+}
+.amount-left.small .value{
+    font-size: 1.5rem;
+}
+.amount-left.small .left{
+    align-items: center;
+    padding: 0.5rem;
+}
+.reward-enter{
+   display: none;
+}
+.reward-enter.active-25 ,
+.reward-enter.active-75,
+.reward-enter.active-200{
+    display: block;
+    border-top: 1px solid hsla(0, 0%, 48%, 0.404);
+    padding: 1rem 0rem;
+}
+
+.reward-enter > label{
+    width: 50%;
+    display: inline-flex;
+    margin-left: 1.5rem;
+    color: hsl(0, 0%, 48%);
+}
+.reward-enter > input{
+    border: 1px solid hsl(0, 0%, 48%);
+    outline: none;
+    height: 2.5rem;
+    width: 5rem;
+    border-radius: 2rem;
+    margin: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+.reward-enter > input[value]{
+    font-weight: 500;
+}
+.success-modal{
+    background-color: white;
+    position: absolute;
+    top:20%;
+    left: 30%;
+    width:initial;
+    right: 30%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-radius: 1.5rem;
+}
+.success-modal .image{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+@media (max-width:850px) {
+   
+    .text-container{
+        left: 0%;
+    }
+    .main-container{
+        left: 0%;
+    }
+    .modal-area{
+        left:0%;
+    }
+}
+
+@media (max-width:700px) {
+    .navbar{
+        background:url(images/image-hero-mobile.jpg) ;
+    }
+    .heading{
+        width: 25rem;
+    }
+    .links{
+        display: flex;
+        justify-content: center;
+        font-weight: 500;                                     
+    }
+    .links .bookmark{
+        margin-left: 2rem;
+    }
+    .text-container,.main-container{
+        width:25rem;
+        left: 16%;
+
+    }
+    .stats-bar{        
+        width: 20rem;
+        grid-template-columns: 1fr;
+    }
+    #myProgress{
+        width: 100%;
+    }
+    .value-space:nth-child(2), .value-space:nth-child(1){
+        border-bottom: 2px solid rgb(160, 161, 160);
+            border-right: none;
+    }
+    .links .bookmark{
+        border-radius: 2rem;
+        padding-right:0.7rem;
+    
+    }
+    button.project-link{
+        padding: 1rem 1.5rem;
+    }
+    .modal-area{
+        width: 25rem;
+    }
+    .modal-sub-head-area{
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-sub-container input[type = radio]{
+        margin-bottom: 1rem;
+    }
+    .modal-sub-container .modal-sub-desc{
+        margin-left: 0rem;
+    }
+    .modal-sub-heading ~ p{
+        margin-left: 0rem;
+    }
+    .subdiv-end{
+    flex-direction: column; 
+    }
+    .subdiv-end button{
+        width:13rem;  
+    }
+    .success-modal{
+        width: 18rem;
+        left:20%;
+    }
+    .navbar-end{
+        display: none;
+    }
+    .navbar-small{
+        display: block;
+        background: url("images/icon-hamburger.svg");
+        width: 13px;
+        height: 1rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        right: 7%;
+        cursor: pointer;
+        top: 4%;
+    }
+    .navbar-small.present{
+        display: block;
+        background: url("images/icon-close-menu.svg");
+    }
+    
+    .menu{
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF;
+        width: 10rem;
+        color: black;
+        position: absolute;
+        right:10%;
+        top: 30px;
+        padding: 1rem 1rem;
+        z-index: 10;
+        border-radius: 1rem;
+        display: none;
+    }
+    .menu.show{
+        display: flex;
+    }
+    .menu a{
+        color: black;
+        padding: 0.5rem 0rem;
+    }
+    .menu a:hover{
+        font-weight: 700;
+    }
+}
+@media (max-width:480px) {
+    .navbar{
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .navbar .navbar-start{
+        background-position-x: 1rem;
+    }
+    .heading{
+        top:80%;
+    }
+    .text-container {
+        top:120%;
+    }
+    .main-container{
+        top:220%;
+
+    }
+    .text-container , .main-container{
+        position: absolute;
+        left:0;
+        width: 25rem;
+        overflow-x:hidden; 
+    }
+    .sub-division{
+        width: 20rem;
+    }
+    .main{
+        overflow-x: hidden;
+    }
+    .success-modal{
+        width: 22rem;
+        left:10%;
+        top:5%;
+    }
+}
+@media (max-width:360px) {
+    .success-modal{
+        width: 18rem;
+    }
+    
+}
