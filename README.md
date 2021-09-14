@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/nobel10122025/crowdfunding_product_page)
-- Live Site URL: [Add live site URL here](https://nobel10122025.github.io/crowdfunding_product_page/index.html)
+- Solution URL: [Click here](https://github.com/nobel10122025/crowdfunding_product_page)
+- Live Site URL: [Click here](https://nobel10122025.github.io/crowdfunding_product_page/index.html)
 
 ## My process
 
